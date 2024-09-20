@@ -7,10 +7,6 @@
 }
 
 .fullscreen-div {
-  position: fixed;
-}
-
-.fullscreen-div {
   width: 100%;  /* Для устаревших браузеров */
   width: 100vw; /* Для современных браузеров */
   height: 100%;
