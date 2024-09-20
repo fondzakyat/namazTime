@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+table {
+    width: 600px;
+ }
+
+ td:first-child {
+    width: 7%;
+ }
+
+h1 {
+    display: table;
+    margin: auto;
+}
