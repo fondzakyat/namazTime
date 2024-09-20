@@ -11,10 +11,6 @@
 }
 
 .fullscreen-div {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.fullscreen-div {
   width: 100%;  /* Для устаревших браузеров */
   width: 100vw; /* Для современных браузеров */
   height: 100%;
