@@ -41,6 +41,13 @@
             text-align: center;
         }
 
+        td {
+
+            vertical-align: middle;
+            text-align: center;
+        }
+
+
         
     </style>
 
@@ -52,14 +59,25 @@
     <div class="card mb-3">
         <img src="4.png" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Время намаза Октябрь Казань</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-
-            <audio controls="controls" autostart="0" autostart="false" preload="none">
+            <h5 class="card-title"><b>Времана намаза на октябрь, Казань</b></h5>
+            <!-- <p class="card-text"></p> -->
+            <div class="d-grid gap-2">
+                <a href="https://t.me/ZAKYATRT" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true"><b>Проекты фонда «Закят»</b></a>
+            </div>
+            <table class="table table-sm"> 
+                <tr>
+                    <td>
+                        <p class="card-text"><small class="text-body-secondary"><b>Слушать радио Азан</b></small></p>
+                    </td>
+                    <td>
+                       <audio controls="controls" autostart="0" autostart="false" preload="none"></audio>
                 <source src="https://hls-iptv.tattelecom.ru/hls/huzur/radio/s1/azan.m3u8" type="application/x-mpegURL" />
-            </audio>
+            </audio> 
+                    </td>
+                </tr>
+            </table>
+          
+            
 
         </div>
     </div>
@@ -67,8 +85,8 @@
     <!-- <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
         <div class="bg-dark p-4">
             <img src="4.png" class="img-fluid" alt="...">
-            <h5 class="text-body-emphasis h4">Collapsed content</h5>
-            <span class="text-body-secondary">Toggleable via the navbar brand.</span>
+            <h5 class="text-body-emphasis h4"></h5>
+            <span class="text-body-secondary">.</span>
         </div>
     </div>
     <nav class="navbar navbar-dark bg-dark">
@@ -79,12 +97,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div> -->
+
     </nav>
 
     <table class="table table-sm">
         <thead>
             <tr>
-                <th scope="col">Дата</th>
+                <th scope="col">День</th>
                 <th scope="col">Зав—ие<br>сухура</th>
                 <th scope="col">Фаджр</th>
                 <th scope="col">Восход<br>солнца</th>
