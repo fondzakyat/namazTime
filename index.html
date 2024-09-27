@@ -7,6 +7,35 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <style>
+        .verticalTableHeader {
+            text-align: center;
+            white-space: nowrap;
+            transform: rotate(90deg);
+
+        }
+
+        .verticalTableHeader p {
+            margin: 0 -100%;
+            display: inline-block;
+        }
+
+        .verticalTableHeader p:before {
+            content: '';
+            width: 0;
+            padding-top: 110%;
+            /* takes width as reference, + 10% for faking some extra padding */
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        table {
+            text-align: center;
+            table-layout: fixed;
+            width: 150px
+        }
+    </style>
+
 </head>
 
 <body>
@@ -46,16 +75,26 @@
 
     <table class="table table-sm">
         <thead>
-            <!-- <tr>
+            <!-- <tr width="10">>
+                <th class="verticalTableHeader" scope="col">Дата</th>
+                <th class="verticalTableHeader" scope="col">Завершение сухура</th>
+                <th class="verticalTableHeader" scope="col">Фаджр</th>
+                <th class="verticalTableHeader" scope="col">Восход солнца</th>
+                <th class="verticalTableHeader" scope="col">Зухр</th>
+                <th class="verticalTableHeader" scope="col">Аср</th>
+                <th class="verticalTableHeader" scope="col">Магриб</th>
+                <th class="verticalTableHeader" scope="col">Иша</th>
+            </tr> -->
+            <tr width="10">>
                 <th scope="col">Дата</th>
-                <th scope="col">Завершение сухура</th>
+                <th scope="col">Зав-ие<br>сухура</th>
                 <th scope="col">Фаджр</th>
-                <th scope="col">Восход солнца</th>
+                <th scope="col">Восход<br>солнца</th>
                 <th scope="col">Зухр</th>
                 <th scope="col">Аср</th>
                 <th scope="col">Магриб</th>
                 <th scope="col">Иша</th>
-            </tr> -->
+            </tr>
             <tr class="table-info">
                 <td>01</td>
                 <td>03:42</td>
