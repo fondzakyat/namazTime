@@ -96,9 +96,17 @@ body {
 }
 
 /* Выделение текущего дня */
+/* Выделение текущего дня */
 .current-day {
     background-color: #4CAF50 !important; /* Акцентный цвет */
     color: white;
+}
+
+/* Выделение ячейки с временем */
+.highlighted-time {
+    background-color: #ffcc00 !important; /* Желтый цвет для ячейки */
+    color: #000000 !important; /* Черный текст для контраста */
+    font-weight: bold; /* Жирный шрифт */
 }
 
 /* Медиа-запросы для мобильных устройств */
