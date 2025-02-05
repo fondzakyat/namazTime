@@ -20,7 +20,7 @@ body {
 }
 
 .card-img-top {
-    filter: invert(0.7); /* Инвертирует цвета логотипа */
+    filter: invert(0.5); /* Инвертирует цвета логотипа */
     width: 100%;
     height: auto;
     border-top-left-radius: 10px;
