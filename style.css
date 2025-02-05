@@ -20,11 +20,11 @@ body {
 }
 
 .card-img-top {
-    filter: invert(0.5); /* Инвертирует цвета логотипа */
     width: 100%;
     height: auto;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    filter: brightness(1.7); /* Увеличиваем яркость на 20% */
 }
 
 .card-body {
