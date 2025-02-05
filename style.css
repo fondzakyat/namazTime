@@ -80,8 +80,8 @@ body {
     font-weight: bold;
     border-radius: 5px;
     margin: 20px auto;
-    max-width: 1200px;
-    width: 100%;
+    max-width: 1200px; /* Такая же ширина, как у карточки */
+    width: 100%; /* Растягиваем на всю ширину */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -125,6 +125,7 @@ body {
     .btn-primary {
         padding: 10px 15px;
         font-size: 14px;
+        max-width: 100%; /* На мобильных устройствах кнопка растягивается на всю ширину */
     }
 
     /* Уменьшаем отступы в карточке */
@@ -148,9 +149,12 @@ body {
     .btn-primary {
         padding: 8px 12px;
         font-size: 12px;
+        max-width: 100%; /* На очень маленьких экранах кнопка растягивается на всю ширину */
     }
 
     .card-body {
         padding: 10px;
     }
 }
+
+
