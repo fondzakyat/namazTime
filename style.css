@@ -37,6 +37,13 @@ body {
     color: #4CAF50; /* Акцентный цвет */
 }
 
+/* Анимация для выделенной ячейки */
+.highlighted-cell {
+    background-color: #4CAF50 !important;
+    color: #ffffff !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* Таблица */
 .table {
     width: 100%;
@@ -96,7 +103,6 @@ body {
 }
 
 /* Выделение текущего дня */
-/* Выделение текущего дня */
 .current-day {
     background-color: #4CAF50 !important; /* Акцентный цвет */
     color: white;
@@ -133,7 +139,7 @@ body {
     .btn-primary {
         padding: 10px 15px;
         font-size: 14px;
-        max-width: 90%; /* На мобильных устройствах кнопка растягивается на всю ширину */
+        max-width: 100%; /* На мобильных устройствах кнопка растягивается на всю ширину */
     }
 
     /* Уменьшаем отступы в карточке */
@@ -157,7 +163,7 @@ body {
     .btn-primary {
         padding: 8px 12px;
         font-size: 12px;
-        max-width: 90%; /* На очень маленьких экранах кнопка растягивается на всю ширину */
+        max-width: 100%; /* На очень маленьких экранах кнопка растягивается на всю ширину */
     }
 
     .card-body {
