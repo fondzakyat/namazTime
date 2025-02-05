@@ -4,103 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-    <style>
-        .verticalTableHeader {
-            text-align: center;
-            white-space: nowrap;
-            transform: rotate(90deg);
-
-        }
-
-        .verticalTableHeader p {
-            margin: 0 -100%;
-            display: inline-block;
-        }
-
-        .verticalTableHeader p:before {
-            content: '';
-            width: 0;
-            padding-top: 110%;
-            /* takes width as reference, + 10% for faking some extra padding */
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        table {
-            text-align: center;
-            table-layout: fixed;
-            width: 150px
-        }
-
-        th {
-            font-size: 7px;
-            vertical-align: middle;
-            text-align: center;
-        }
-
-        audio {
-            box-sizing: border-box;
-            width: 100%;
-            padding: 1px;
-            border: 0%;
-            border-radius: 3%;
-            margin: 0%;
-            height: 30px;
-        }
-
-        p {
-            box-sizing: border-box;
-            width: 100%;
-            padding: 0px;
-            border: 0%;
-            border-radius: 3%;
-            margin: 0%;
-        }
-
-        .btn-primary {
-            box-sizing: border-box;
-            width: 100%;
-            padding: 0px;
-            border: 0%;
-            border-radius: 5%;
-            margin: 0%;
-            height: 30px;
-        }
-
-        img {
-            box-sizing: border-box;
-            width: 1%;
-            padding: 0px;
-            border: 0%;
-            margin: 0%;
-        }
-    </style>
-
+    <link rel="stylesheet" href="style.css"> <!-- Подключаем стили -->
+    <title>Время намаза</title>
 </head>
 
 <body>
     <div class="card mb-3">
         <img src="4.png" class="card-img-top" alt="...">
         <div class="card-body">
-            <!-- <p class="card-text"></p> -->
-            <div class="d-grid gap-2">
-                <a href="https://t.me/ZAKYATRT"
-                    style="background-color: #066738; border-color: #066738; text-transform: uppercase"
-                    class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true"><b>Помочь
-                        нуждающимся</b></a>
-            </div>
-            <p class="card-text"><small class="text-body-secondary"><b>Радио «Азан»</b></small></p>
-            <audio controls="controls" autostart="0" autostart="false" preload="none">
-                <source src="https://hls-iptv.tattelecom.ru/hls/huzur/radio/s1/azan.m3u8"
-                    type="application/x-mpegURL" />
-            </audio>
-            <br><br>
             <div align="center">
-                <h7 style="color: #066738" class="card-title"><b>Времана намаза на февраль, Казань</b></h7>
+                <h7 class="card-title"><b>Времана намаза на февраль. Казань</b></h7>
             </div>
         </div>
     </div>
@@ -108,16 +21,18 @@
     <table class="table table-sm">
         <thead>
             <tr>
-                <th style="color: #066738; width: 7%" scope="col">День</th>
-                <th style="color: #066738" scope="col">Зав—ие<br>сухура</th>
-                <th style="color: #066738" scope="col">Фаджр</th>
-                <th style="color: #066738" scope="col">Восход<br>солнца</th>
-                <th style="color: #066738" scope="col">Зухр</th>
-                <th style="color: #066738" scope="col">Аср</th>
-                <th style="color: #066738" scope="col">Магриб</th>
-                <th style="color: #066738" scope="col">Иша</th>
+                <th scope="col">День</th>
+                <th scope="col">Зав—ие<br>сухура</th>
+                <th scope="col">Фаджр</th>
+                <th scope="col">Восход<br>солнца</th>
+                <th scope="col">Зухр</th>
+                <th scope="col">Аср</th>
+                <th scope="col">Магриб</th>
+                <th scope="col">Иша</th>
             </tr>
-
+        </thead>
+        <tbody>
+            
             <tr class="table-info">
                 <td>01</td>
                 <td>05:28</td>
@@ -399,8 +314,30 @@
                 <td>18:57</td>
                 </tr>
                 
+
+        </tbody>
     </table>
-    </thead>
+
+    <div class="d-grid gap-2">
+        <a href="https://t.me/ZAKYATRT" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">
+            <b>Помочь нуждающимся</b>
+        </a>
+    </div>
+
+    <script>
+        // Получаем текущую дату
+        const today = new Date();
+        const currentDay = today.getDate(); // Получаем текущий день месяца (1-31)
+        // Находим все строки в таблице
+        const rows = document.querySelectorAll('table tbody tr');
+        // Перебираем строки и сравниваем день
+        rows.forEach(row => {
+            const dayCell = row.querySelector('td:first-child'); // Первая ячейка в строке содержит день
+            if (dayCell && parseInt(dayCell.textContent) === currentDay) {
+                row.classList.add('current-day'); // Добавляем класс для выделения
+            }
+        });
+    </script>
 </body>
 
 </html>
