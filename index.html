@@ -324,49 +324,53 @@
         </a>
     </div>
 
-   <script>
-        // Функция для преобразования времени в минуты
-        function timeToMinutes(time) {
-            const [hours, minutes] = time.split(':').map(Number);
-            return hours * 60 + minutes;
+  <script>
+    // Функция для преобразования времени в минуты
+    function timeToMinutes(time) {
+        const [hours, minutes] = time.split(':').map(Number);
+        return hours * 60 + minutes;
+    }
+
+    // Получаем текущую дату и время с учетом московской таймзоны (UTC+3)
+    const today = new Date();
+    const moscowOffset = 3 * 60; // Московская таймзона UTC+3 (в минутах)
+    const localOffset = today.getTimezoneOffset(); // Локальное смещение (в минутах)
+    const moscowTime = new Date(today.getTime() + (moscowOffset + localOffset) * 60 * 1000); // Корректируем время
+
+    const currentDay = moscowTime.getDate(); // Текущий день
+    const currentHours = moscowTime.getHours(); // Текущий час
+    const currentMinutes = moscowTime.getMinutes(); // Текущие минуты
+    const currentTime = currentHours * 60 + currentMinutes; // Текущее время в минутах
+
+    // Находим все строки в таблице
+    const rows = document.querySelectorAll('table tbody tr');
+
+    // Перебираем строки
+    rows.forEach(row => {
+        const dayCell = row.querySelector('td:first-child'); // Первая ячейка (день)
+        if (dayCell && parseInt(dayCell.textContent) === currentDay) {
+            // Выделяем строку с текущей датой
+            row.classList.add('current-day');
+
+            // Находим все ячейки с временем в этой строке
+            const timeCells = row.querySelectorAll('td:not(:first-child)'); // Все ячейки, кроме первой (день)
+            let previousTime = 0; // Время предыдущей ячейки
+
+            // Перебираем ячейки с временем
+            timeCells.forEach((cell, index) => {
+                const cellTime = timeToMinutes(cell.textContent); // Время в текущей ячейке
+                const nextCellTime = timeCells[index + 1] ? timeToMinutes(timeCells[index + 1].textContent) : Infinity; // Время в следующей ячейке
+
+                // Проверяем, попадает ли текущее время в диапазон
+                if (currentTime >= cellTime && currentTime < nextCellTime) {
+                    cell.classList.add('highlighted-time'); // Выделяем ячейку с временем
+                }
+
+                previousTime = cellTime; // Обновляем предыдущее время
+            });
         }
-
-        // Получаем текущую дату и время
-        const today = new Date();
-        const currentDay = today.getDate(); // Текущий день
-        const currentHours = today.getHours(); // Текущий час
-        const currentMinutes = today.getMinutes(); // Текущие минуты
-        const currentTime = currentHours * 60 + currentMinutes; // Текущее время в минутах
-
-        // Находим все строки в таблице
-        const rows = document.querySelectorAll('table tbody tr');
-
-        // Перебираем строки
-        rows.forEach(row => {
-            const dayCell = row.querySelector('td:first-child'); // Первая ячейка (день)
-            if (dayCell && parseInt(dayCell.textContent) === currentDay) {
-                // Выделяем строку с текущей датой
-                row.classList.add('current-day');
-
-                // Находим все ячейки с временем в этой строке
-                const timeCells = row.querySelectorAll('td:not(:first-child)'); // Все ячейки, кроме первой (день)
-                let previousTime = 0; // Время предыдущей ячейки
-
-                // Перебираем ячейки с временем
-                timeCells.forEach((cell, index) => {
-                    const cellTime = timeToMinutes(cell.textContent); // Время в текущей ячейке
-                    const nextCellTime = timeCells[index + 1] ? timeToMinutes(timeCells[index + 1].textContent) : Infinity; // Время в следующей ячейке
-
-                    // Проверяем, попадает ли текущее время в диапазон
-                    if (currentTime >= cellTime && currentTime < nextCellTime) {
-                        cell.classList.add('highlighted-time'); // Выделяем ячейку с временем
-                    }
-
-                    previousTime = cellTime; // Обновляем предыдущее время
-                });
-            }
-        });
-    </script>
+    });
+</script>
 </body>
 
 </html>
