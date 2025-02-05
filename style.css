@@ -20,7 +20,7 @@ body {
 }
 
 .card-img-top {
-    filter: invert(0.0); /* Инвертирует цвета логотипа */
+    filter: invert(1); /* Инвертирует цвета логотипа */
     width: 100%;
     height: auto;
     border-top-left-radius: 10px;
@@ -99,4 +99,58 @@ body {
 .current-day {
     background-color: #4CAF50 !important; /* Акцентный цвет */
     color: white;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    /* Уменьшаем размер шрифта для карточки */
+    .card-title {
+        font-size: 20px;
+    }
+
+    /* Уменьшаем отступы в таблице */
+    .table th,
+    .table td {
+        padding: 8px;
+        font-size: 12px; /* Уменьшаем размер шрифта */
+    }
+
+    /* Делаем таблицу более компактной */
+    .table {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    /* Уменьшаем размер кнопки */
+    .btn-primary {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    /* Уменьшаем отступы в карточке */
+    .card-body {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Еще больше уменьшаем шрифты и отступы для очень маленьких экранов */
+    .card-title {
+        font-size: 18px;
+    }
+
+    .table th,
+    .table td {
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    .btn-primary {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
 }
